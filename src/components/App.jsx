@@ -12,7 +12,9 @@ export const App = () => {
       [NEUTRAL]: 0,
       [BAD]: 0
     }
-   );
+  );
+
+  const { good, neutral, bad } = state;
 
   const increment = (type) => {
     setState({...state, [type]: state[type] + 1});
@@ -25,8 +27,6 @@ export const App = () => {
   const countPositiveFeedbackPercentage = () => {
     return Math.round(good / countTotalFeedback() * 100)
   }
-
-  const { good, neutral, bad } = state;
 
   return (
     <div
@@ -41,12 +41,12 @@ export const App = () => {
       }}
     > 
       <Section 
-        title={"Please leave feedback"}
+        title="Please leave feedback"
         Children={<FeedbackOptions onLeaveFeedback={increment} />} 
       />
 
       <Section 
-        title={"Statistics"} 
+        title="Statistics" 
         Children={
           countTotalFeedback() > 0 ? (
             <Statistics 
