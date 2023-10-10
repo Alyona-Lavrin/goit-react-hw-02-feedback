@@ -1,8 +1,8 @@
-const Section = ({title, Children}) => {
+const Section = ({title, children}) => {
     return (
         <>
             <h4>{title}</h4>
-            {Children}
+            {children}
         </>
     )
 }

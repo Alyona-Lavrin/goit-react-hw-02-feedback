@@ -1,11 +1,7 @@
-import { GOOD, NEUTRAL, BAD} from "../../constants"
-
-const FeedbackOptions = ({onLeaveFeedback}) => {
+const FeedbackOptions = ({onLeaveFeedback, options}) => {
     return (
         <div>
-            <button className="button" onClick={() => onLeaveFeedback(GOOD)}>good</button> 
-            <button className="button" onClick={() => onLeaveFeedback(NEUTRAL)}>neutral</button> 
-            <button className="button" onClick={() => onLeaveFeedback(BAD)}>bad</button>
+            {options.map(name=><button className="button" onClick={() => onLeaveFeedback(name)}>{name}</button>)}
         </div>
     )
 }
